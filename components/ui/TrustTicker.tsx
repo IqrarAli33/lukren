@@ -7,7 +7,7 @@ const clients = [
 ];
 
 export const TrustTicker = () => (
-  <div className="py-12 border-y border-white/5 bg-black/50 overflow-hidden flex whitespace-nowrap">
+  <div className="py-12 border-y border-slate-200 bg-white/50 overflow-hidden flex whitespace-nowrap">
     {/* Exactly 2 copies — animates from 0 to -50% for a seamless infinite loop */}
     <motion.div
       animate={{ x: "-50%" }}
@@ -17,7 +17,7 @@ export const TrustTicker = () => (
       {[...clients, ...clients].map((name, i) => (
         <span
           key={i}
-          className="text-lg font-bold text-zinc-700 tracking-[0.2em] mx-4 hover:text-zinc-500 transition-colors cursor-default select-none"
+          className="text-lg font-bold text-slate-400 hover:text-slate-500 tracking-[0.2em] mx-4 transition-colors cursor-default select-none"
         >
           {name}
         </span>

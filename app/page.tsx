@@ -18,10 +18,10 @@ export default function Home() {
   const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
 
   return (
-    <div className="bg-black min-h-screen">
+    <div className="bg-slate-50 min-h-screen">
       {/* Scroll progress bar */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-[2px] bg-cyan-500 z-[1000] origin-left"
+        className="fixed top-0 left-0 right-0 h-[2px] bg-blue-600 z-[1000] origin-left"
         style={{ scaleX }}
       />
       <Navbar />

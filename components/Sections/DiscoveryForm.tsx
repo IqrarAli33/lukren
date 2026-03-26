@@ -41,20 +41,20 @@ export const DiscoveryForm = () => {
     };
 
     return (
-        <section id="contact" className="py-32 relative px-6 bg-black overflow-hidden">
+        <section id="contact" className="py-32 relative px-6 bg-slate-50 overflow-hidden">
             {/* Background Glow */}
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-cyan-500/5 blur-[120px] rounded-full -z-10" />
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-blue-500/5 blur-[120px] rounded-full -z-10" />
 
             <div className="max-w-4xl mx-auto">
                 <div className="mb-16 text-center">
                     <motion.span
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
-                        className="text-cyan-500 font-mono text-sm tracking-[0.3em] uppercase block mb-4"
+                        className="text-blue-600 font-mono text-sm tracking-[0.3em] uppercase block mb-4"
                     >
             // Project Inquiry
                     </motion.span>
-                    <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">Ready to build the future?</h2>
+                    <h2 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight">Ready to build the future?</h2>
 
                     {/* Progress Indicator */}
                     {!submitted && (
@@ -62,7 +62,7 @@ export const DiscoveryForm = () => {
                             {[1, 2, 3].map((i) => (
                                 <div
                                     key={i}
-                                    className={`h-1.5 rounded-full transition-all duration-500 ${step >= i ? 'w-12 bg-cyan-500' : 'w-6 bg-zinc-800'
+                                    className={`h-1.5 rounded-full transition-all duration-500 ${step >= i ? 'w-12 bg-blue-600' : 'w-6 bg-slate-200'
                                         }`}
                                 />
                             ))}
@@ -70,7 +70,7 @@ export const DiscoveryForm = () => {
                     )}
                 </div>
 
-                <div className="bg-zinc-900/30 border border-white/10 p-8 md:p-14 rounded-[2.5rem] backdrop-blur-xl relative shadow-2xl">
+                <div className="bg-white border border-slate-200 p-8 md:p-14 rounded-[2.5rem] relative shadow-xl shadow-slate-200/50">
                     <AnimatePresence mode="wait">
                         {!submitted ? (
                             <motion.form
@@ -85,8 +85,8 @@ export const DiscoveryForm = () => {
                                 {step === 1 && (
                                     <div className="space-y-8">
                                         <div className="space-y-2">
-                                            <h3 className="text-2xl font-bold text-white">What should we focus on?</h3>
-                                            <p className="text-zinc-500">Select the primary service your project requires.</p>
+                                            <h3 className="text-2xl font-bold text-slate-900">What should we focus on?</h3>
+                                            <p className="text-slate-500">Select the primary service your project requires.</p>
                                         </div>
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                             {['Web Architecture', 'AI Integration', 'Cybersecurity', 'Cloud Ops'].map((item) => (
@@ -94,13 +94,13 @@ export const DiscoveryForm = () => {
                                                     key={item}
                                                     type="button"
                                                     onClick={() => { setFormData({ ...formData, service: item }); nextStep(); }}
-                                                    className={`p-6 text-left border rounded-2xl transition-all group relative overflow-hidden ${formData.service === item ? 'border-cyan-500 bg-cyan-500/5' : 'border-white/5 bg-white/5 hover:border-white/20'
+                                                    className={`p-6 text-left border rounded-2xl transition-all group relative overflow-hidden ${formData.service === item ? 'border-blue-600 bg-blue-50' : 'border-slate-200 bg-white hover:border-blue-300 shadow-sm'
                                                         }`}
                                                 >
-                                                    <span className={`text-lg font-medium ${formData.service === item ? 'text-cyan-400' : 'text-zinc-300'}`}>
+                                                    <span className={`text-lg font-medium ${formData.service === item ? 'text-blue-700' : 'text-slate-700'}`}>
                                                         {item}
                                                     </span>
-                                                    <ArrowRight className={`absolute right-6 top-1/2 -translate-y-1/2 w-5 h-5 transition-transform ${formData.service === item ? 'text-cyan-400 translate-x-0' : 'text-zinc-600 translate-x-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-0'
+                                                    <ArrowRight className={`absolute right-6 top-1/2 -translate-y-1/2 w-5 h-5 transition-transform ${formData.service === item ? 'text-blue-600 translate-x-0' : 'text-slate-400 translate-x-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-0'
                                                         }`} />
                                                 </button>
                                             ))}
@@ -112,16 +112,16 @@ export const DiscoveryForm = () => {
                                 {step === 2 && (
                                     <div className="space-y-8">
                                         <div className="space-y-2">
-                                            <h3 className="text-2xl font-bold text-white">Project Scope</h3>
-                                            <p className="text-zinc-500">Tell us about your budget and mission.</p>
+                                            <h3 className="text-2xl font-bold text-slate-900">Project Scope</h3>
+                                            <p className="text-slate-500">Tell us about your budget and mission.</p>
                                         </div>
                                         <div className="space-y-6">
                                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                                 <div className="space-y-2">
-                                                    <label className="text-xs font-mono text-zinc-500 uppercase ml-1">Est. Budget</label>
+                                                    <label className="text-xs font-mono text-slate-500 uppercase ml-1">Est. Budget</label>
                                                     <select
                                                         required
-                                                        className="w-full bg-black/50 border border-white/10 rounded-xl px-5 py-4 text-white outline-none focus:ring-2 ring-cyan-500/20 transition-all appearance-none"
+                                                        className="w-full bg-white border border-slate-300 rounded-xl px-5 py-4 text-slate-900 shadow-sm outline-none focus:ring-2 ring-blue-500/20 focus:border-blue-500 transition-all appearance-none"
                                                         onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
                                                     >
                                                         <option value="">Select range</option>
@@ -132,18 +132,18 @@ export const DiscoveryForm = () => {
                                                 </div>
                                             </div>
                                             <div className="space-y-2">
-                                                <label className="text-xs font-mono text-zinc-500 uppercase ml-1">Brief Description</label>
+                                                <label className="text-xs font-mono text-slate-500 uppercase ml-1">Brief Description</label>
                                                 <textarea
                                                     placeholder="What problem are we solving?"
-                                                    className="w-full bg-black/50 border border-white/10 rounded-xl px-5 py-4 text-white h-32 outline-none focus:ring-2 ring-cyan-500/20 transition-all resize-none"
+                                                    className="w-full bg-white border border-slate-300 rounded-xl px-5 py-4 text-slate-900 shadow-sm h-32 outline-none focus:ring-2 ring-blue-500/20 focus:border-blue-500 transition-all resize-none"
                                                     onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                                                 />
                                             </div>
                                             <div className="flex gap-4 pt-4">
-                                                <button type="button" onClick={prevStep} className="flex-1 py-4 border border-white/10 rounded-xl text-white font-bold hover:bg-white/5 transition-all flex items-center justify-center gap-2">
+                                                <button type="button" onClick={prevStep} className="flex-1 py-4 border border-slate-300 rounded-xl text-slate-700 font-bold hover:bg-slate-50 transition-all flex items-center justify-center gap-2">
                                                     <ArrowLeft className="w-4 h-4" /> Back
                                                 </button>
-                                                <button type="button" onClick={nextStep} className="flex-[2] py-4 bg-white text-black font-bold rounded-xl hover:bg-cyan-400 transition-all">
+                                                <button type="button" onClick={nextStep} className="flex-[2] py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 shadow-lg shadow-blue-600/20 transition-all">
                                                     Next Step
                                                 </button>
                                             </div>
@@ -155,35 +155,35 @@ export const DiscoveryForm = () => {
                                 {step === 3 && (
                                     <div className="space-y-8">
                                         <div className="space-y-2">
-                                            <h3 className="text-2xl font-bold text-white">Final Details</h3>
-                                            <p className="text-zinc-500">Where should we send the proposal?</p>
+                                            <h3 className="text-2xl font-bold text-slate-900">Final Details</h3>
+                                            <p className="text-slate-500">Where should we send the proposal?</p>
                                         </div>
                                         <div className="space-y-4">
                                             <input
                                                 required
                                                 type="text"
                                                 placeholder="Full Name"
-                                                className="w-full bg-black/50 border border-white/10 rounded-xl px-5 py-4 text-white outline-none focus:ring-2 ring-cyan-500/20"
+                                                className="w-full bg-white border border-slate-300 shadow-sm rounded-xl px-5 py-4 text-slate-900 outline-none focus:ring-2 ring-blue-500/20 focus:border-blue-500"
                                                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                                             />
                                             <input
                                                 required
                                                 type="email"
                                                 placeholder="Work Email"
-                                                className="w-full bg-black/50 border border-white/10 rounded-xl px-5 py-4 text-white outline-none focus:ring-2 ring-cyan-500/20"
+                                                className="w-full bg-white border border-slate-300 shadow-sm rounded-xl px-5 py-4 text-slate-900 outline-none focus:ring-2 ring-blue-500/20 focus:border-blue-500"
                                                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                                             />
                                             {error && (
-                                                <p className="text-red-400 text-sm font-mono">{error}</p>
+                                                <p className="text-red-500 text-sm font-mono">{error}</p>
                                             )}
                                             <div className="flex gap-4 pt-4">
-                                                <button type="button" onClick={prevStep} className="flex-1 py-4 border border-white/10 rounded-xl text-white font-bold hover:bg-white/5 transition-all">
+                                                <button type="button" onClick={prevStep} className="flex-1 py-4 border border-slate-300 rounded-xl text-slate-700 font-bold hover:bg-slate-50 transition-all">
                                                     Back
                                                 </button>
                                                 <button
                                                     type="submit"
                                                     disabled={isLoading}
-                                                    className="flex-[2] py-4 bg-cyan-500 text-black font-extrabold rounded-xl shadow-[0_0_40px_rgba(34,211,238,0.3)] hover:bg-cyan-400 transition-all flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
+                                                    className="flex-[2] py-4 bg-blue-600 text-white font-extrabold rounded-xl shadow-lg shadow-blue-600/30 hover:bg-blue-700 transition-all flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
                                                 >
                                                     {isLoading ? "Sending..." : (<>Secure Consultation <Send className="w-4 h-4" /></>)}
                                                 </button>
@@ -198,16 +198,16 @@ export const DiscoveryForm = () => {
                                 animate={{ scale: 1, opacity: 1 }}
                                 className="text-center py-10"
                             >
-                                <div className="w-24 h-24 bg-cyan-500/20 rounded-full flex items-center justify-center mx-auto mb-8 border border-cyan-500/30">
-                                    <CheckCircle2 className="w-12 h-12 text-cyan-400" />
+                                <div className="w-24 h-24 bg-emerald-50 rounded-full flex items-center justify-center mx-auto mb-8 border border-emerald-200">
+                                    <CheckCircle2 className="w-12 h-12 text-emerald-600" />
                                 </div>
-                                <h3 className="text-3xl font-bold text-white mb-4">Discovery Request Received</h3>
-                                <p className="text-zinc-400 text-lg max-w-sm mx-auto">
+                                <h3 className="text-3xl font-bold text-slate-900 mb-4">Discovery Request Received</h3>
+                                <p className="text-slate-600 text-lg max-w-sm mx-auto">
                                     Our lead architect will review your brief and contact you within 12 business hours.
                                 </p>
                                 <button
                                     onClick={() => { setSubmitted(false); setStep(1); }}
-                                    className="mt-10 text-cyan-500 font-mono text-sm hover:underline"
+                                    className="mt-10 text-blue-600 font-mono text-sm hover:underline"
                                 >
                                     &gt; Send another inquiry
                                 </button>

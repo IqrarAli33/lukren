@@ -1,30 +1,37 @@
-# NEVA.PROJECTS — Premium Systems Engineering
+# Lukren — High-Performance Tech Agency
 
-NEVA.PROJECTS is a high-performance tech agency portfolio designed for industry leaders who demand excellence in web architecture and AI integration.
+**Lukren** is a premium tech agency portfolio designed for industry leaders who demand excellence in web architecture, artificial intelligence integration, cybersecurity, and cloud operations.
 
-## 🚀 Features
+## ✨ B2B Enterprise Light Theme
 
-- **Premium UI/UX**: Modern dark-themed design with cyan accents and glassmorphism.
-- **Interactive Spotlight Cards**: Custom hover effects that follow the user's cursor.
-- **Smooth Animations**: Powered by `framer-motion` for a fluid browsing experience.
-- **Responsive Architecture**: Fully optimized for mobile, tablet, and desktop.
-- **Tech Stack**:
-  - **Framework**: [Next.js](https://nextjs.org/) (App Router)
-  - **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
-  - **Icons**: [Lucide React](https://lucide.dev/)
-  - **Animations**: [Framer Motion](https://www.framer.com/motion/)
+The platform has been redesigned from a neon cyberpunk aesthetic to a **Tier-1 Corporate Light Theme** tailored for B2B enterprise clients. The new design focuses on extreme readability, trust, and premium finishing. 
+
+### Key Visual Highlights
+- **Corporate Palette**: Crisp `slate-50` backgrounds, high-contrast `slate-900` typography, and trust-inspiring `blue-600` accents.
+- **Actionable Layouts**: Soft shadow boxes, pristine white cards, and smooth gradient transitions engineered for high conversion rates.
+- **Interactive Particle Canvas**: A custom HTML5 Canvas particle network in the Hero section, providing a dynamic yet subdued technological backdrop.
+- **Premium 3D Physics**: Friction-based 3D tilt interactions on Case Study cards using Framer Motion.
+
+## 🚀 Technical Stack
+
+- **Framework**: [Next.js 15](https://nextjs.org/) (App Router)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Language**: TypeScript
 
 ## 🛠️ Getting Started
 
 ### Prerequisites
 
 - Node.js 18.x or later
-- npm or yarn
+- npm, yarn, pnpm, or bun
 
 ### Installation
 
-1. Clone the repository or navigate to the project directory:
+1. Clone the repository and navigate to the project directory:
    ```bash
+   git clone <repository-url>
    cd tech-agency
    ```
 
@@ -42,11 +49,19 @@ NEVA.PROJECTS is a high-performance tech agency portfolio designed for industry 
 
 ## 📁 Project Structure
 
-- `app/`: Contains the main layout, global styles, and page entry point.
-- `components/Sections/`: Core sections like Hero, Services, and Blog.
-- `components/layout/`: Shared layout components like the Navbar.
-- `components/ui/`: Reusable UI elements like the Spotlight Card.
+- `app/` - Global CSS, App Router layout, and the unified single-page entry point (`page.tsx`).
+- `components/Sections/` - Core marketing content:
+  - `Hero.tsx` - High-impact hero with Canvas background
+  - `ExpandedServices.tsx` - Comprehensive capability grid
+  - `Process.tsx` - Our structured methodology timeline
+  - `CaseStudies.tsx` - 3D interactive proof-of-work cards
+  - `DiscoveryForm.tsx` - Multi-step lead generation architecture
+  - `Blog.tsx` - Engineering insights UI
+  - `FAQ.tsx` - Enterprise-grade accordion list
+  - `CTABanner.tsx` - High-conversion closing banner
+- `components/layout/` - Global shells (`Navbar.tsx` & `Footer.tsx`).
+- `components/ui/` - Abstracted interactive elements (`TrustTicker.tsx`, `SpotlightCard.tsx`, `CanvasBackground.tsx`).
 
 ## 📄 License
 
-This project is private and intended for internal use.
+This repository is reserved for the private web infrastructure of Lukren. All rights reserved.

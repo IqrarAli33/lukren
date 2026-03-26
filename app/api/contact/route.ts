@@ -32,7 +32,7 @@ export async function POST(req: NextRequest) {
     // import { Resend } from "resend";
     // const resend = new Resend(process.env.RESEND_API_KEY);
     // await resend.emails.send({
-    //   from: "NEVA.PROJECTS <onboarding@resend.dev>",
+    //   from: "Lukren <onboarding@resend.dev>",
     //   to: ["your@email.com"],
     //   subject: `New inquiry from ${name} — ${service}`,
     //   html: `

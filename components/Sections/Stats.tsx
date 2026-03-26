@@ -3,10 +3,10 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 
 const stats = [
-  { value: 47, suffix: "+", label: "Projects Delivered", color: "text-cyan-400" },
-  { value: 99, suffix: "%", label: "Client Retention", color: "text-purple-400" },
-  { value: 12, suffix: "h", label: "Avg. Response Time", color: "text-blue-400" },
-  { value: 5, suffix: "★", label: "Average Rating", color: "text-emerald-400" },
+  { value: 47, suffix: "+", label: "Projects Delivered", color: "text-blue-600" },
+  { value: 99, suffix: "%", label: "Client Retention", color: "text-indigo-600" },
+  { value: 12, suffix: "h", label: "Avg. Response Time", color: "text-sky-600" },
+  { value: 5, suffix: "★", label: "Average Rating", color: "text-emerald-600" },
 ];
 
 function AnimatedNumber({ value, suffix }: { value: number; suffix: string }) {
@@ -41,7 +41,7 @@ function AnimatedNumber({ value, suffix }: { value: number; suffix: string }) {
 }
 
 export const StatsSection = () => (
-  <section className="py-20 border-t border-white/5">
+  <section className="py-20 border-t border-slate-200">
     <div className="max-w-7xl mx-auto px-6">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
         {stats.map((stat, i) => (
@@ -56,7 +56,7 @@ export const StatsSection = () => (
             <div className={`text-5xl md:text-6xl font-black tracking-tighter mb-2 ${stat.color}`}>
               <AnimatedNumber value={stat.value} suffix={stat.suffix} />
             </div>
-            <p className="text-zinc-500 text-sm font-mono uppercase tracking-widest">{stat.label}</p>
+            <p className="text-slate-600 text-sm font-mono uppercase tracking-widest">{stat.label}</p>
           </motion.div>
         ))}
       </div>

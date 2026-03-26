@@ -5,7 +5,7 @@ import { Plus } from "lucide-react";
 
 const faqs = [
   {
-    q: "What makes NEVA.PROJECTS different from a typical agency?",
+    q: "What makes Lukren different from a typical agency?",
     a: "We specialize exclusively in deep tech. Every engineer on our team has production experience in Next.js, LLM pipelines, or security audits — not generalists juggling WordPress sites. We also operate on fixed-scope contracts, so you always know exactly what you're paying for.",
   },
   {
@@ -30,13 +30,13 @@ export const FAQSection = () => {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section className="py-24 px-6 border-t border-white/5 bg-zinc-950/20">
+    <section className="py-24 px-6 border-t border-slate-200 bg-white">
       <div className="max-w-3xl mx-auto">
         <div className="mb-16 text-center">
-          <h2 className="text-cyan-500 font-mono text-sm tracking-[0.3em] uppercase mb-4">
+          <h2 className="text-blue-600 font-mono text-sm tracking-[0.3em] uppercase mb-4">
             // Common Questions
           </h2>
-          <h3 className="text-5xl font-bold text-white tracking-tighter">
+          <h3 className="text-5xl font-bold text-slate-900 tracking-tighter">
             Everything you need to know.
           </h3>
         </div>
@@ -50,14 +50,14 @@ export const FAQSection = () => {
               viewport={{ once: true }}
               transition={{ delay: i * 0.07 }}
               className={`border rounded-2xl overflow-hidden transition-colors duration-300 ${
-                open === i ? "border-white/15 bg-zinc-900/60" : "border-white/5 bg-zinc-900/20"
+                open === i ? "border-blue-200 bg-blue-50/50" : "border-slate-200 bg-white hover:bg-slate-50 shadow-sm"
               }`}
             >
               <button
                 onClick={() => setOpen(open === i ? null : i)}
                 className="w-full flex items-center justify-between px-7 py-6 text-left group"
               >
-                <span className="text-white font-medium text-base pr-4 group-hover:text-cyan-400 transition-colors">
+                <span className={`font-medium text-base pr-4 transition-colors ${open === i ? 'text-blue-700' : 'text-slate-900 group-hover:text-blue-600'}`}>
                   {faq.q}
                 </span>
                 <motion.div
@@ -65,7 +65,7 @@ export const FAQSection = () => {
                   transition={{ duration: 0.2 }}
                   className="shrink-0"
                 >
-                  <Plus className="w-5 h-5 text-zinc-500" />
+                  <Plus className={`w-5 h-5 ${open === i ? 'text-blue-600' : 'text-slate-400'}`} />
                 </motion.div>
               </button>
 
@@ -78,7 +78,7 @@ export const FAQSection = () => {
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                     className="overflow-hidden"
                   >
-                    <p className="px-7 pb-6 text-zinc-400 leading-relaxed text-sm">{faq.a}</p>
+                    <p className="px-7 pb-6 text-slate-600 leading-relaxed text-sm">{faq.a}</p>
                   </motion.div>
                 )}
               </AnimatePresence>

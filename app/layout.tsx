@@ -15,22 +15,22 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "NEVA.PROJECTS — Premium Systems Engineering",
+  title: "Lukren — Premium Systems Engineering",
   description:
     "High-performance web architecture and specialized AI integration for industry leaders who demand excellence. Web Development, AI, Machine Learning, and Cybersecurity.",
   keywords: ["web development", "AI integration", "machine learning", "cybersecurity", "Next.js", "tech agency"],
-  authors: [{ name: "NEVA.PROJECTS" }],
+  authors: [{ name: "Lukren" }],
   openGraph: {
-    title: "NEVA.PROJECTS — Premium Systems Engineering",
+    title: "Lukren — Premium Systems Engineering",
     description:
       "High-performance web architecture and specialized AI integration for industry leaders who demand excellence.",
-    siteName: "NEVA.PROJECTS",
+    siteName: "Lukren",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "NEVA.PROJECTS — Premium Systems Engineering",
+    title: "Lukren — Premium Systems Engineering",
     description:
       "High-performance web architecture and specialized AI integration for industry leaders who demand excellence.",
   },
