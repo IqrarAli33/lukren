@@ -1,10 +1,16 @@
 "use client";
 import { motion, useScroll, useSpring } from "framer-motion";
 import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/Sections/Hero";
-import { ServicesGrid } from "@/components/Sections/ExpandedServices";
 import { TrustTicker } from "@/components/ui/TrustTicker";
+import { StatsSection } from "@/components/Sections/Stats";
+import { ServicesGrid } from "@/components/Sections/ExpandedServices";
+import { ProcessSection } from "@/components/Sections/Process";
+import { CaseStudies } from "@/components/Sections/CaseStudies";
 import { BlogSection } from "@/components/Sections/Blog";
+import { FAQSection } from "@/components/Sections/FAQ";
+import { CTABanner } from "@/components/Sections/CTABanner";
 import { DiscoveryForm } from "@/components/Sections/DiscoveryForm";
 
 export default function Home() {
@@ -13,13 +19,23 @@ export default function Home() {
 
   return (
     <div className="bg-black min-h-screen">
-      <motion.div className="fixed top-0 left-0 right-0 h-1 bg-cyan-500 z-[1000] origin-left" style={{ scaleX }} />
+      {/* Scroll progress bar */}
+      <motion.div
+        className="fixed top-0 left-0 right-0 h-[2px] bg-cyan-500 z-[1000] origin-left"
+        style={{ scaleX }}
+      />
       <Navbar />
       <Hero />
       <TrustTicker />
+      <StatsSection />
       <ServicesGrid />
+      <ProcessSection />
+      <CaseStudies />
       <BlogSection />
+      <FAQSection />
+      <CTABanner />
       <DiscoveryForm />
+      <Footer />
     </div>
   );
 }

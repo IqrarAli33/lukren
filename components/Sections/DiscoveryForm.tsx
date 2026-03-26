@@ -7,6 +7,8 @@ import { CheckCircle2, Send, ArrowRight, ArrowLeft } from 'lucide-react';
 export const DiscoveryForm = () => {
     const [step, setStep] = useState(1);
     const [submitted, setSubmitted] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState("");
     const [formData, setFormData] = useState({
         service: '',
         budget: '',
@@ -18,10 +20,24 @@ export const DiscoveryForm = () => {
     const nextStep = () => setStep((s) => s + 1);
     const prevStep = () => setStep((s) => s - 1);
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        // Here you would typically integrate with an API like Resend or Formspree
-        setSubmitted(true);
+        setIsLoading(true);
+        setError("");
+        try {
+            const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData),
+            });
+            const data = await res.json();
+            if (!res.ok) throw new Error(data.message || "Something went wrong.");
+            setSubmitted(true);
+        } catch (err: unknown) {
+            setError(err instanceof Error ? err.message : "Submission failed. Please try again.");
+        } finally {
+            setIsLoading(false);
+        }
     };
 
     return (
@@ -157,12 +173,19 @@ export const DiscoveryForm = () => {
                                                 className="w-full bg-black/50 border border-white/10 rounded-xl px-5 py-4 text-white outline-none focus:ring-2 ring-cyan-500/20"
                                                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                                             />
+                                            {error && (
+                                                <p className="text-red-400 text-sm font-mono">{error}</p>
+                                            )}
                                             <div className="flex gap-4 pt-4">
                                                 <button type="button" onClick={prevStep} className="flex-1 py-4 border border-white/10 rounded-xl text-white font-bold hover:bg-white/5 transition-all">
                                                     Back
                                                 </button>
-                                                <button type="submit" className="flex-[2] py-4 bg-cyan-500 text-black font-extrabold rounded-xl shadow-[0_0_40px_rgba(34,211,238,0.3)] hover:bg-cyan-400 transition-all flex items-center justify-center gap-2">
-                                                    Secure Consultation <Send className="w-4 h-4" />
+                                                <button
+                                                    type="submit"
+                                                    disabled={isLoading}
+                                                    className="flex-[2] py-4 bg-cyan-500 text-black font-extrabold rounded-xl shadow-[0_0_40px_rgba(34,211,238,0.3)] hover:bg-cyan-400 transition-all flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
+                                                >
+                                                    {isLoading ? "Sending..." : (<>Secure Consultation <Send className="w-4 h-4" /></>)}
                                                 </button>
                                             </div>
                                         </div>
